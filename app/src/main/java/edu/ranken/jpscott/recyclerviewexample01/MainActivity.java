@@ -1,5 +1,18 @@
 package edu.ranken.jpscott.recyclerviewexample01;
 
+/*
+        An Android RecyclerView is an advanced version of
+        an Android ListView.
+
+        A RecyclerView is used to show data in the form of
+        a scrollable list. It is therefore a ViewGroup used
+        to display a large set of data.
+
+        For each item in a dataset, it displays a View.
+        A RecyclerView is an efficient way to implement a
+        scrollable list in a Vertical, Horizontal, Grid,
+        staggered, or customized layout.
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;

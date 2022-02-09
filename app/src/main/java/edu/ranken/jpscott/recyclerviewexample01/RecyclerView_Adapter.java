@@ -11,6 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Collections;
 import java.util.List;
 
+/*
+        In this RecyclerView_Adapter.java file, we extend
+        the RecyclerView.Adapter class and create its constructor.
+        When we do this, it shows an error.  So, we must implement
+        its onCreateViewHolder(), onBindViewHolder(), and
+        getItemCount() methods, as shown below.
+ */
+
 public class RecyclerView_Adapter extends RecyclerView.Adapter<View_Holder>{
     List<Data> list = Collections.emptyList();
     Context context;
@@ -20,6 +28,13 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<View_Holder>{
         this.context = application;
     }
 
+    /*
+            The onCreateViewHolder() method "inflates:
+            the row layout and initializes the view holder.
+
+            It find views once, and recycles them so that
+            repetitive calls are avoided.
+     */
     @NonNull
     @Override
     public View_Holder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -30,6 +45,11 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<View_Holder>{
         return holder;
     }
 
+    /*
+         The onBindViewHolder() method uses the
+         onCreateViewHolder() View Holder to fill in the
+         current RecyclerView row with data.
+     */
     @Override
     public void onBindViewHolder(@NonNull View_Holder holder, int position) {
         //  Use the provide View Holder on the onCreateViewHolder method
@@ -37,6 +57,10 @@ public class RecyclerView_Adapter extends RecyclerView.Adapter<View_Holder>{
         holder.ivProgram.setImageResource(list.get(position).imageId);
     }
 
+    /*
+            The getItemCount() method returns the collection size
+            which contains the total number of items we wish to show.
+     */
     @Override
     public int getItemCount() {
         return list.size();
